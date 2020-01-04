@@ -1,0 +1,12 @@
+This is my first file.
+Ready to get commit or lets say to be added.
+
+--First Edit to done.
+	how to do it
+		-> git status will give the modified signal
+	git add first.txt
+now, 	git status 
+		->will tell that the file has been modified.
+	since, changing is a two step process
+	git commit -m "Modified first.txt"
+yay,thats it about editing files.
