@@ -61,8 +61,12 @@ Git is to build a tree structure based on objects. Associate files with hashing.
 | `git status` | Check status |
 | `git add [file-name.txt]` | Add a file to the staging area |
 | `git add -A` | Add all new and changed files to the staging area |
+| `git add -p` | See changes before adding to staging area |
 | `git commit -m "[commit message]"` | Commit changes |
+| `git commit -a -m <message>` | Directly commiting the tracked files before adding to stating area |
 | `git rm -r [file-name.txt]` | Remove a file (or folder) |
+| `git diff` | See changes |
+| `git diff --staged` | See changes (on staged files) |
 
 ### Branching & Merging
 
@@ -103,6 +107,9 @@ Git is to build a tree structure based on objects. Associate files with hashing.
 | ------- | ----------- |
 | `git log` | View changes |
 | `git log --summary` | View changes (detailed) |
+| `git log -p`  -"p for patch" | View changes (detailed) |
+| `git show commitID` | View changes (individual changes) |
+| `git show --stat` | View changes (stats) |
 | `git log --oneline` | View changes (briefly) |
 | `git diff [source branch] [target branch]` | Preview changes before merging |
 
