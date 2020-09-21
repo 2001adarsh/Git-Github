@@ -25,7 +25,7 @@ text editors are capable of automating this.
 
 :q
 
-For more information as to how to write meaningful commits, visit <a href = "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst?id=HEAD"> here</a>
+For more information as to how to write meaningful commits, visit <a href = "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst?id=HEAD"> here</a> and <a href = "https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message">here too!!</a>
 
 ## Concept
 
