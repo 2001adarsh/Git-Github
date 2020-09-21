@@ -2,7 +2,11 @@
 
 # Git
 
-Everything about git. Including basic concepts, git flow, git commit specification, git plugin, and common problem solving
+Everything about git. Including basic concepts, git flow, git commit specification and git plugin.
+
+It is said to be a Distributed Version Control, compared to traditional Centralized Version Control systems such as SVN.
+Git has the concept of local and remote repositories. So it involves the synchronization of local and remote warehouses.
+
 
 ## Writing Commit messages:
 Commit message style guide for Git
@@ -27,24 +31,6 @@ text editors are capable of automating this.
 
 For more information as to how to write meaningful commits, visit <a href = "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst?id=HEAD"> here</a> and <a href = "https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message">here too!!</a>
 
-## Concept
-
-> Don't memorize the command, but know the principle behind the command, that is, what exactly is happening behind the command.
-
-
-It is said to be a Distributed Version Control, compared to traditional Centralized Version Control systems such as SVN.
-Git has the concept of local and remote repositories. So it involves the synchronization of local and remote warehouses.
-
-You can view the address information of the remote branch with the following command:
-
-`` 
-git: (daily / 0.1.0) git remote -v
-origin http://gitlab.test.com/f/test.git (fetch)
-origin http://gitlab.test.com/f/test.git (push)  
-`` 
-
-Git is to build a tree structure based on objects. Associate files with hashing.
-
 ## So Some Common Git Commands which can come very handy.
 
 ### Getting & Creating Projects
@@ -65,28 +51,36 @@ Git is to build a tree structure based on objects. Associate files with hashing.
 | `git commit -m "[commit message]"` | Commit changes |
 | `git commit -a -m <message>` | Directly commiting the tracked files before adding to stating area |
 | `git rm -r [file-name.txt]` | Remove a file (or folder) |
+| `git mv [file-name.txt] [new-file-name.txt]` | Move/Rename a file (or folder) |
 | `git diff` | See changes |
 | `git diff --staged` | See changes (on staged files) |
 
-### Branching & Merging
+
+### Branching, Merging & Reverting
 
 | Command | Description |
 | ------- | ----------- |
 | `git branch` | List branches (the asterisk denotes the current branch) |
 | `git branch -a` | List all branches (local and remote) |
 | `git branch [branch name]` | Create a new branch |
-| `git branch -d [branch name]` | Delete a branch |
+| `git branch -d [branch name]` | Delete a branch (gives error if the branch is not fully merged -D to be used)|
 | `git push origin --delete [branch name]` | Delete a remote branch |
 | `git checkout -b [branch name]` | Create a new branch and switch to it |
 | `git checkout -b [branch name] origin/[branch name]` | Clone a remote branch and switch to it |
 | `git branch -m [old branch name] [new branch name]` | Rename a local branch |
 | `git checkout [branch name]` | Switch to a branch |
 | `git checkout -` | Switch to the branch last checked out |
-| `git checkout -- [file-name.txt]` | Discard changes to a file |
+| `git checkout -- [file-name.txt]` | Discard changes to a file which is Unstaged |
+| `git reset [branch name (HEAD)] [file-name.txt]` | Discard changes to a file which is staged with respect to currently checked out branch |
+| `git reset -p` | Ask which recent changes to discard |
 | `git merge [branch name]` | Merge a branch into the active branch |
 | `git merge [source branch] [target branch]` | Merge a branch into a target branch |
 | `git stash` | Stash changes in a dirty working directory |
 | `git stash clear` | Remove all stashed entries |
+| `git commit --amend` |  modify and add changes to the most recent commit (Best to use Locally only)|
+| `git revert HEAD` | create new commit with inverse changes of last commit (rollback) |
+| `git revert commit-id` | revert the commit of the respective commit id |
+
 
 ### Sharing & Updating Projects
 
@@ -112,28 +106,8 @@ Git is to build a tree structure based on objects. Associate files with hashing.
 | `git show --stat` | View changes (stats) |
 | `git log --oneline` | View changes (briefly) |
 | `git diff [source branch] [target branch]` | Preview changes before merging |
+| `git branch` | List all branches |
 
-### Common scenarios and solutions
+### .gitignore files
+.gitignore files are used to tell the git tool to intentionally ignore some files in a given Git repository. For example, this can be useful for configuration files or metadata files that a user may not want to check into the master branch. Check out more at: https://git-scm.com/docs/gitignore.
 
-> The premise is that you need to understand the basic concepts above
-
-1. How do I roll back a submission?
-
-If you need to roll back a commit, you can submit a new commit to reverse the content of that commit.
-This is exactly what git revert commit-id does.
-
-2. How do I roll back to a commit?
-
-Theoretically we can use git revert HEAD, git revert HEAD ^ 1 ...
-But this is more troublesome, you can do it through git reset commit-id.
-
-This operation is different from git revert. It directly points the pointer to the commit-id, forcing a change in the commit history.
-Rather than creating a new commit, doing so is risky, so you need to force it when pushing to a remote location. git push --force
-
-> If you want to go back to the previous version after reset after git reset. It can be viewed through git reflog, and then rolled back again through git reset commit-id.
-If you think of git commit as a game archive, then git reflog is an archive record
-
-3. I'm working on a feature and I have a bug online. But the function is half-written and cannot be submitted. What should I do?
-
-The contents of the workspace can be stored by git stash. Then switch the new branch to complete the bug fix, switch to the unfinished branch again, execute
-git stash pop restores unfinished work to the workspace.
