@@ -127,3 +127,12 @@ For more information as to how to write meaningful commits, visit <a href = "htt
 | `git remote -v` | logs fetch & push URLs|
 | `git remote show origin` | logs a bit more details |
 | `git branch -r` | Lists remote branches |
+
+
+### Some important Links to Rebasing, Rewriting History and Merge conflicts.
+https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-merge-conflicts
+https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/resolving-a-merge-conflict-using-the-command-line
+https://git-scm.com/book/en/v2/Git-Branching-Rebasing
+https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History
+
+### Good Day.. Thank You..
