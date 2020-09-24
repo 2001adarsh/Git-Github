@@ -113,3 +113,17 @@ For more information as to how to write meaningful commits, visit <a href = "htt
 ### .gitignore files
 .gitignore files are used to tell the git tool to intentionally ignore some files in a given Git repository. For example, this can be useful for configuration files or metadata files that a user may not want to check into the master branch. Check out more at: https://git-scm.com/docs/gitignore.
 
+
+# GitHub
+
+### Commands which come in handy
+
+| Command | Description |
+| ------- | ----------- |
+| `git clone <URL>` | clone a remote repository into a local workspace |
+| `git push` | push commits from your local repo to a remote repo |
+| `git pull` | fetch the newest updates from a remote repository |
+| `git config --global credential.helper`| caching github credentials |
+| `git remote -v` | logs fetch & push URLs|
+| `git remote show origin` | logs a bit more details |
+| `git branch -r` | Lists remote branches |
