@@ -75,6 +75,7 @@ For more information as to how to write meaningful commits, visit <a href = "htt
 | `git reset -p` | Ask which recent changes to discard |
 | `git merge [branch name]` | Merge a branch into the active branch |
 | `git merge [source branch] [target branch]` | Merge a branch into a target branch |
+| `git merge --abort` | abort the merge action |
 | `git stash` | Stash changes in a dirty working directory |
 | `git stash clear` | Remove all stashed entries |
 | `git commit --amend` |  modify and add changes to the most recent commit (Best to use Locally only)|
@@ -107,6 +108,7 @@ For more information as to how to write meaningful commits, visit <a href = "htt
 | `git log --oneline` | View changes (briefly) |
 | `git diff [source branch] [target branch]` | Preview changes before merging |
 | `git branch` | List all branches |
+| `git log --graph --oneline` | Shows newtwork graph |
 
 ### .gitignore files
 .gitignore files are used to tell the git tool to intentionally ignore some files in a given Git repository. For example, this can be useful for configuration files or metadata files that a user may not want to check into the master branch. Check out more at: https://git-scm.com/docs/gitignore.
